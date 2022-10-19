@@ -5,16 +5,16 @@ import SessionHelper from "../../helper/SessionHelper";
 const AuthSlice = createSlice({
   name: "Auth",
   initialState: {
-    accessToken: SessionHelper.GetToken() || undefined,
+    AccessToken: SessionHelper.GetToken() || undefined,
   },
   reducers: {
     SetLogin: (state, action) => {
       SessionHelper.SetToken(action.payload);
-      state.accessToken = SessionHelper.GetToken() || undefined;
+      state.AccessToken = SessionHelper.GetToken() || undefined;
     },
     SetLogout: (state, action) => {
       SessionHelper.RemoveToken();
-      state.accessToken = SessionHelper.GetToken() || undefined;
+      state.AccessToken = SessionHelper.GetToken() || undefined;
     },
   },
 });

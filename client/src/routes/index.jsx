@@ -11,9 +11,25 @@ import FullScreenLoader from "../components/Common/FullScreenLoader";
 import SentOtpPage from "../page/RecoveryPage/SentOtpPage";
 import VetifyOtpPage from "../page/RecoveryPage/VetifyOtpPage";
 import ResetPasswordPage from "../page/RecoveryPage/ResetPasswordPage";
+import HomePage from "../page/HomePage/HomePage";
+import EditProfilePage from "../page/EditProfilePage/EditProfilePage";
+
+
+const A = () => {
+  return <div className="dashboard-content-wrapper">a</div>;
+};
+
+const B = () => {
+  return <div className="dashboard-content-wrapper">b</div>;
+};
+
+const C = () => {
+  return <div className="dashboard-content-wrapper">c</div>;
+};
+
 
 const AppRoutes = () => {
-  const { accessToken } = useSelector((state) => state.Auth);
+  const { AccessToken } = useSelector((state) => state.Auth);
 
   return (
     <>
@@ -21,27 +37,50 @@ const AppRoutes = () => {
         <Routes>
           <Route
             path="/"
-            element={accessToken ? <DashboardPage /> : <Navigate to="/login" />}
+            element={AccessToken ? <DashboardPage /> : <Navigate to="/login" />}
+            key={Date.now()}
+          />
+          <Route
+            path="/dashboard"
+            element={AccessToken ? <DashboardPage /> : <Navigate to="/login" />}
+            key={Date.now()}
+          />
+          <Route
+            path="/a"
+            element={AccessToken ? <A /> : <Navigate to="/login" />}
+            key={Date.now()}
+          />
+          <Route
+            path="/b"
+            element={AccessToken ? <B /> : <Navigate to="/login" />}
+            key={Date.now()}
+          />
+          <Route
+            path="/edit-profile"
+            element={
+              AccessToken ? <EditProfilePage /> : <Navigate to="/login" />
+            }
+            key={Date.now()}
           />
           <Route
             path="/login"
-            element={accessToken ? <Navigate to="/" /> : <LoginPage />}
+            element={AccessToken ? <Navigate to="/" /> : <LoginPage />}
           />
           <Route
             path="/register"
-            element={accessToken ? <Navigate to="/" /> : <RegisterPage />}
+            element={AccessToken ? <Navigate to="/" /> : <RegisterPage />}
           />
           <Route
             path="/forget-password"
-            element={accessToken ? <Navigate to="/" /> : <SentOtpPage />}
+            element={AccessToken ? <Navigate to="/" /> : <SentOtpPage />}
           />
           <Route
             path="/verify-otp"
-            element={accessToken ? <Navigate to="/" /> : <VetifyOtpPage />}
+            element={AccessToken ? <Navigate to="/" /> : <VetifyOtpPage />}
           />
           <Route
             path="/reset-password"
-            element={accessToken ? <Navigate to="/" /> : <ResetPasswordPage />}
+            element={AccessToken ? <Navigate to="/" /> : <ResetPasswordPage />}
           />
         </Routes>
       </BrowserRouter>

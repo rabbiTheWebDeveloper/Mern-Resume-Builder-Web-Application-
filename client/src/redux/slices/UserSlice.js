@@ -1,15 +1,20 @@
 //external import
 import { createSlice } from "@reduxjs/toolkit";
+import SessionHelper from "../../helper/SessionHelper";
 
 const UserSlice = createSlice({
   name: "User",
-  initialState: {},
+  initialState: {
+    UserDetails: SessionHelper.GetUserDetails() || undefined,
+  },
   reducers: {
     SetUserDetails(state, action) {
-      state.UserDetails = action.payload;
+      SessionHelper.SetUserDetails(action.payload);
+      state.UserDetails = SessionHelper.GetUserDetails() || undefined;
     },
     RemoveUserDetails(state, action) {
-      state.UserDetails = undefined;
+      SessionHelper.RemoveUserDetails();
+      state.UserDetails = SessionHelper.GetUserDetails() || undefined;
     },
   },
 });

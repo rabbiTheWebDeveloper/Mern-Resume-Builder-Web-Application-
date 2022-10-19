@@ -1,6 +1,7 @@
 //Internal Import
 import ToastMessage from "../helper/ToastMessage";
 import { SetLogin } from "../redux/slices/AuthSlice";
+import { SetUserDetails } from "../redux/slices/UserSlice";
 import store from "../redux/store/store";
 import RestClient from "./RestClient";
 
@@ -20,7 +21,8 @@ class AuthRequest {
     const { data } = await RestClient.postRequest("/Auth/LoginUser", postBody);
 
     if (data) {
-      store.dispatch(SetLogin(data?.accessToken));
+      store.dispatch(SetLogin(data?.AccessToken));
+      store.dispatch(SetUserDetails(data?.UserDetail));
       ToastMessage.successMessage("User Login Successfull");
     }
   }

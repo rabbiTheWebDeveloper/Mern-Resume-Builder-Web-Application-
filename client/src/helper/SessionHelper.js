@@ -1,21 +1,21 @@
 class SessionHelper {
-  static SetToken(accessToken) {
-    localStorage.setItem("accessToken", accessToken);
+  static SetToken(AccessToken) {
+    localStorage.setItem("AccessToken", AccessToken);
   }
   static GetToken() {
-    return localStorage.getItem("accessToken");
+    return localStorage.getItem("AccessToken");
   }
   static RemoveToken() {
-    return localStorage.removeItem("accessToken");
+    return localStorage.removeItem("AccessToken");
   }
-  static SetUserDetails(User) {
-    localStorage.setItem("User", JSON.stringify(User));
+  static SetUserDetails(UserDetail) {
+    localStorage.setItem("UserDetail", JSON.stringify(UserDetail));
   }
   static GetUserDetails() {
-    return JSON.parse(localStorage.getItem("User"));
+    return JSON.parse(localStorage.getItem("UserDetail"));
   }
   static RemoveUserDetails() {
-    return localStorage.removeItem("User");
+    return localStorage.removeItem("UserDetail");
   }
   static SetOtpEmail(Email) {
     return localStorage.setItem("OTPEmail", Email);
@@ -38,7 +38,7 @@ class SessionHelper {
   }
 
   static ResetStorage() {
-    localStorage.removeItem("accessToken");
+    localStorage.removeItem("AccessToken");
     localStorage.removeItem("User");
     localStorage.removeItem("OTPEmail");
     localStorage.removeItem("OTPCode");

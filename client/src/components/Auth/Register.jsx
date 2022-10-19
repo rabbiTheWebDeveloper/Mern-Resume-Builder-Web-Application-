@@ -22,13 +22,7 @@ const validationSchema = Yup.object().shape({
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       "Invalid Email address",
     ),
-  Phone: Yup.string()
-    .required("Phone is Required")
-    .matches(
-      /(^(\+88|0088|88)?(01){1}[3456789]{1}(\d){8})$/,
-      "Invalid Phone address",
-    ),
-
+  Phone: Yup.string().required("Phone is Required"),
   Password: Yup.string().required("Password is Required"),
   ConfirmPassword: Yup.string()
     .required("Confirm Password is required")
@@ -42,7 +36,7 @@ const Register = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="padding-top-90 padding-bottom-90 access-page-bg">
+    <div className="padding-top-90 padding-bottom-90 access-page-bg register">
       <Container>
         <Row>
           <Col md={6} xl={6}>

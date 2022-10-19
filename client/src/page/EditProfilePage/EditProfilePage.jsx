@@ -3,17 +3,19 @@ import { lazy, Suspense } from "react";
 
 //Internal Lib Import
 import LazyLoader from "../../components/Common/LazyLoader";
-const Dashboard = lazy(() => import("../../components/Dashboard/Dashboard"));
+const EditProfile = lazy(() =>
+  import("../../components/EditProfile/EditProfile"),
+);
 const MasterLayout = lazy(() => import("../../components/MasterLayout"));
 
-const DashboardPage = () => {
+const EditProfilePage = () => {
   return (
     <Suspense fallback={<LazyLoader />}>
       <MasterLayout>
-        <Dashboard />
+        <EditProfile />
       </MasterLayout>
     </Suspense>
   );
 };
 
-export default DashboardPage;
+export default EditProfilePage;
