@@ -37577,7 +37577,8 @@ export const PreferredOrganizationList = [
     label: "Internet",
   },
 ];
-export const SkillList = [];
+
+
 export const GenderList = [
   {
     value: "Male",
@@ -37624,7 +37625,6 @@ export const ReligionList = [
   },
 ];
 
-
 export const MaritalStatus = [
   {
     value: "Unmarried",
@@ -37652,7 +37652,8 @@ export const BloodGroup = [
   {
     value: "B(+ve)",
     label: "B(+ve)",
-  },{
+  },
+  {
     value: "O(+ve)",
     label: "O(+ve)",
   },
@@ -37669,7 +37670,6 @@ export const BloodGroup = [
     label: "AB(-ve)",
   },
 ];
-
 
 export const PreferredJobCategories = [
   {
@@ -37714,8 +37714,6 @@ export const PreferredJobCategories = [
   },
 ];
 
-
-
 export const PreferredSpecialJobCategories = [
   {
     value: "ওয়েল্ডার",
@@ -37756,3 +37754,177 @@ export const Keywords = [
     label: "Next",
   },
 ];
+
+export const BANo = [
+  {
+    value: "BA",
+    label: "BA",
+  },
+  {
+    value: "BSS",
+    label: "BSS",
+  },
+  {
+    value: "JSS",
+    label: "JSS",
+  },
+  {
+    value: "BSP",
+    label: "BSP",
+  },
+  {
+    value: "BJO",
+    label: "BJO",
+  },
+  {
+    value: "No",
+    label: "No",
+  },
+];
+
+export const Ranks = [
+  {
+    value: "2Lt",
+    label: "2Lt",
+  },
+  {
+    value: "Lt",
+    label: "Lt",
+  },
+  {
+    value: "Capt",
+    label: "Capt",
+  },
+  {
+    value: "Maj",
+    label: "Maj",
+  },
+  {
+    value: "Lt Col",
+    label: "Lt Col",
+  },
+  {
+    value: "Brig Gen",
+    label: "Brig Gen",
+  },
+  {
+    value: "Lt Gen",
+    label: "Lt Gen",
+  },
+  {
+    value: "CoSnkl",
+    label: "CoSnkl",
+  },
+  {
+    value: "L/cpl",
+    label: "L/cpl",
+  },
+  {
+    value: "Cpl",
+    label: "Cpl",
+  },
+  {
+    value: "Sgt",
+    label: "Sgt",
+  },
+  {
+    value: "WO",
+    label: "WO",
+  },
+  {
+    value: "SWO",
+    label: "SWO",
+  },
+  {
+    value: "MWO",
+    label: "MWO",
+  },
+  {
+    value: "H/Lt",
+    label: "H/Lt",
+  },
+  {
+    value: "H/Capt",
+    label: "H/Capt",
+  },
+];
+
+export const Types = [
+  {
+    value: "Officer",
+    label: "Officer",
+  },
+  {
+    value: "JCO",
+    label: "JCO",
+  },
+  {
+    value: "NCO",
+    label: "NCO",
+  },
+];
+
+
+export const Armss = [
+  {
+    value: "Sigs",
+    label: "Sigs",
+  },
+  {
+    value: "Engr",
+    label: "Engr",
+  },
+  {
+    value: "EME",
+    label: "EME",
+  },
+  {
+    value: "Ord",
+    label: "Ord",
+  },
+  {
+    value: "AMC",
+    label: "AMC",
+  },
+  {
+    value: "AEC",
+    label: "AEC",
+  },
+  {
+    value: "CMP",
+    label: "CMP",
+  },
+  {
+    value: "ADC",
+    label: "ADC",
+  },
+  {
+    value: "AFNS",
+    label: "AFNS",
+  },
+  {
+    value: "RVFC",
+    label: "RVFC",
+  },
+  {
+    value: "ACC",
+    label: "ACC",
+  },
+];
+
+
+
+export const Readings = [
+  { value: "High", label: "High" },
+  { value: "Medium" , label: "Medium"},
+  { value: "Secondary", label: "Secondary" },
+  { value: "Low" , label: "Low"},
+]
+
+export const ReferencesRelation = [
+  { value: "Relative", label: "Relative" },
+  { value: "Family Friend", label: "Family Friend" },
+  { value: "Academic", label: "Academic" },
+  { value: "Professional", label: "Professional" },
+  { value: "Others", label: "Others" }
+]

@@ -37,7 +37,7 @@ const Dashboard = () => {
           <Row className="no-gliters">
             <Col>
               <div className="dashboard-container">
-                'ererwr'
+                <div className="dashboard-content-wrapper"></div>
                 <LeftBar />
               </div>
             </Col>
@@ -98,7 +98,7 @@ const LeftBar = () => {
       <div className="dashboard-menu">
         <ul>
           <li>
-            <Link to="/a">
+            <Link to="/">
               <i className="mr-3">
                 <FaHome />
               </i>
@@ -106,7 +106,7 @@ const LeftBar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/edit-profile">
+            <Link to="/account">
               <i className="mr-3">
                 <FaEdit />
               </i>

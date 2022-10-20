@@ -218,10 +218,6 @@ const Footer = () => {
                     Submit
                     <i className="fas fa-caret-right" />
                   </button>
-                  <p className="newsletter-error">0 - Please enter a value</p>
-                  <p className="newsletter-success">
-                    Thank you for subscribing!
-                  </p>
                 </form>
               </div>
             </Col>

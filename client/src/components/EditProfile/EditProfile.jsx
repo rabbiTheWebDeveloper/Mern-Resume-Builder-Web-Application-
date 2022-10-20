@@ -8,6 +8,8 @@ import { Link } from "react-router-dom";
 //Internal Lib Import
 import { SetLogout } from "../../redux/slices/AuthSlice";
 import LazyLoader from "../Common/LazyLoader";
+import OtherInformation from "./OtherInformation/OtherInformation";
+const Employment = lazy(() => import("./Employment/Employment"));
 const PersonalInfo = lazy(() => import("./PersonalInfo/PersonalInfo"));
 const EducationTraining = lazy(() =>
   import("./EducationTraining/EducationTraining"),
@@ -35,7 +37,7 @@ const EditProfile = () => {
                       <Link to="/dashboard">Candidates Dashboard</Link>
                     </li>
                     <li className="breadcrumb-item active">
-                      <Link to="/edit-profile">Personal Info</Link>
+                      <Link to="/account">Personal Info</Link>
                     </li>
                   </ol>
                 </nav>
@@ -165,6 +167,20 @@ const ViewProfileForm = ({ categoryName }) => {
     return (
       <Suspense fallback={<LazyLoader />}>
         <EducationTraining />
+      </Suspense>
+    );
+  }
+  if (categoryName === "Employment") {
+    return (
+      <Suspense fallback={<LazyLoader />}>
+        <Employment />
+      </Suspense>
+    );
+  }
+  if (categoryName === "OtherInformation") {
+    return (
+      <Suspense fallback={<LazyLoader />}>
+        <OtherInformation />
       </Suspense>
     );
   }

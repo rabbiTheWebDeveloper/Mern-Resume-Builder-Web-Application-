@@ -2,7 +2,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { IoMdNotificationsOutline } from "react-icons/io";
 import { VscAccount } from "react-icons/vsc";
 import { BsArrowDownCircle } from "react-icons/bs";
 
@@ -35,85 +34,7 @@ const Header = () => {
                 <div className="header-top-toggler-button" />
               </div>
               <div className="top-nav" style={{ display: "flex" }}>
-                <div
-                  className="dropdown header-top-notification"
-                  onClick={() => setOpenNotify(!openNotify)}
-                >
-                  <span className="notification-button">
-                    <IoMdNotificationsOutline />
-                    Notification
-                  </span>
-                  <div
-                    className={
-                      openNotify
-                        ? "notification-card  d-block"
-                        : "notification-card"
-                    }
-                  >
-                    <div className="notification-head">
-                      <span>Notifications</span>
-                      <Link onClick={(e) => e.preventDefault()}>
-                        Mark all as read
-                      </Link>
-                    </div>
-                    <div className="notification-body">
-                      <Link className="notification-list">
-                        <i>
-                          <BsArrowDownCircle />
-                        </i>
-                        <p>Your Resume Updated!</p>
-                        <span className="time">5 hours ago</span>
-                      </Link>
-                      <Link
-                        onClick={(e) => e.preventDefault()}
-                        className="notification-list"
-                      >
-                        <i>
-                          <BsArrowDownCircle />
-                        </i>
-                        <p>Someone downloaded resume</p>
-                        <span className="time">11 hours ago</span>
-                      </Link>
-                      <Link
-                        onClick={(e) => e.preventDefault()}
-                        className="notification-list"
-                      >
-                        <i>
-                          <BsArrowDownCircle />
-                        </i>
-                        <p>
-                          You applied for Project Manager <span>@homeland</span>
-                        </p>
-                        <span className="time">11 hours ago</span>
-                      </Link>
-                      <Link
-                        onClick={(e) => e.preventDefault()}
-                        className="notification-list"
-                      >
-                        <i>
-                          <BsArrowDownCircle />
-                        </i>
-                        <p>You changed password</p>
-                        <span className="time">5 hours ago</span>
-                      </Link>
-                      <Link
-                        onClick={(e) => e.preventDefault()}
-                        className="notification-list"
-                      >
-                        <i>
-                          <BsArrowDownCircle />
-                        </i>
-                        <p>Someone downloaded resume</p>
-                        <span className="time">11 hours ago</span>
-                      </Link>
-                    </div>
-                    <div className="notification-footer">
-                      <Link onClick={(e) => e.preventDefault()}>
-                        See all notification
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                
                 <div
                   className="dropdown header-top-account"
                   onClick={() => setOpenAccount(!openAccount)}

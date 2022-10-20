@@ -13,20 +13,7 @@ import VetifyOtpPage from "../page/RecoveryPage/VetifyOtpPage";
 import ResetPasswordPage from "../page/RecoveryPage/ResetPasswordPage";
 import HomePage from "../page/HomePage/HomePage";
 import EditProfilePage from "../page/EditProfilePage/EditProfilePage";
-
-
-const A = () => {
-  return <div className="dashboard-content-wrapper">a</div>;
-};
-
-const B = () => {
-  return <div className="dashboard-content-wrapper">b</div>;
-};
-
-const C = () => {
-  return <div className="dashboard-content-wrapper">c</div>;
-};
-
+import NotFoundPage from "../page/NotFoundPage/NotFoundPage";
 
 const AppRoutes = () => {
   const { AccessToken } = useSelector((state) => state.Auth);
@@ -46,17 +33,7 @@ const AppRoutes = () => {
             key={Date.now()}
           />
           <Route
-            path="/a"
-            element={AccessToken ? <A /> : <Navigate to="/login" />}
-            key={Date.now()}
-          />
-          <Route
-            path="/b"
-            element={AccessToken ? <B /> : <Navigate to="/login" />}
-            key={Date.now()}
-          />
-          <Route
-            path="/edit-profile"
+            path="/account"
             element={
               AccessToken ? <EditProfilePage /> : <Navigate to="/login" />
             }
@@ -81,6 +58,10 @@ const AppRoutes = () => {
           <Route
             path="/reset-password"
             element={AccessToken ? <Navigate to="/" /> : <ResetPasswordPage />}
+          />
+          <Route
+            path="*"
+            element={<NotFoundPage />}
           />
         </Routes>
       </BrowserRouter>

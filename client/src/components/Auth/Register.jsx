@@ -8,14 +8,14 @@ import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
 
 //Internal Lib Import
-import { SkillList } from "../../Fakedata";
+import { PreferredJobCategories } from "../../Fakedata";
 import AuthRequest from "../../APIRequest/AuthRequest";
+import ReactSelect from "react-select";
 
 const validationSchema = Yup.object().shape({
   FirstName: Yup.string().required("First Name is Required"),
   LastName: Yup.string().required("Last Name is Required"),
   Gender: Yup.string().required("Gender is Required"),
-  PreferredAreas: Yup.string().required("Preferred Areas is Required"),
   Email: Yup.string()
     .required("Email is Required")
     .matches(
@@ -237,24 +237,21 @@ const Register = () => {
                             meta,
                           }) => (
                             <div className="form-group">
-                              <Field
-                                name="PreferredAreas"
-                                as="select"
-                                className={
-                                  errors.PreferredAreas &&
-                                  touched.PreferredAreas
-                                    ? "form-control is-invalid"
-                                    : "form-control"
+                              <ReactSelect
+                                className="form-control"
+                                isSearchable
+                                closeMenuOnSelect={true}
+                                defaultValue={[
+                                  {
+                                    value: "EducationTraining",
+                                    label: "Education/Training",
+                                  },
+                                ]}
+                                options={PreferredJobCategories}
+                                onChange={(e) =>
+                                  props.setFieldValue("PreferredAreas", e.value)
                                 }
-                              >
-                                <option>Select Skil</option>
-                                {SkillList.map((skil, index) => (
-                                  <option key={index} value={skil.value}>
-                                    {skil.label}
-                                  </option>
-                                ))}
-                              </Field>
-                              <i className="fa fa-caret-down" />
+                              />
                             </div>
                           )}
                         </Field>

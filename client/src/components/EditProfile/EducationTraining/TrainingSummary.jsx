@@ -7,20 +7,18 @@ import { useSelector } from "react-redux";
 
 //Internal Lib Import
 import UserRequest from "../../../APIRequest/UserRequest";
+import Select from "react-select";
+import { CountryList } from "../../../Fakedata";
 
 const validationSchema = Yup.object().shape({
   Trainings: Yup.array().of(
     Yup.object().shape({
-      LevelOfTraining: Yup.string().required("Level Of Training is Required"),
-      ExamDegreeTitle: Yup.string().required("ExamDegree Title is Required"),
-      ConcentrationMajorGroup: Yup.string().required(
-        "Concentration Major Group is Required",
-      ),
-      Board: Yup.string().required("Board is Required"),
-      InstituteName: Yup.string().required("Institute Name is Required"),
-      Result: Yup.string().required("Result is Required"),
-      YearOfPassing: Yup.string().required("Year Of Passing is Required"),
+      Title: Yup.string().required("Title is Required"),
+      Country: Yup.string().required("Country is Required"),
+      Year: Yup.string().required("Year is Required"),
+      Institute: Yup.string().required("Institute is Required"),
       Duration: Yup.string().required("Duration is Required"),
+      Location: Yup.string().required("Location is Required"),
     }),
   ),
 });
@@ -97,15 +95,13 @@ const TrainingSummary = () => {
                                 className="add-more"
                                 onClick={() =>
                                   arrayHelpers.push({
-                                    LevelOfTraining: "",
-                                    ExamDegreeTitle: "",
-                                    ConcentrationMajorGroup: "",
-                                    Board: "",
-                                    InstituteName: "",
-                                    Result: "",
-                                    YearOfPassing: "",
+                                    Title: "",
+                                    Country: "",
+                                    Covered: "",
+                                    Year: "",
+                                    Institute: "",
                                     Duration: "",
-                                    Achievement: "",
+                                    Location: "",
                                   })
                                 }
                               >
@@ -133,76 +129,25 @@ const TrainingSummary = () => {
                                                   className={
                                                     props?.errors?.Trainings?.[
                                                       index
-                                                    ]?.LevelOfTraining
+                                                    ]?.Title
                                                       ? "input-group-text bg-danger text-white"
                                                       : "input-group-text"
                                                   }
                                                 >
-                                                  Training Level &nbsp;
+                                                  Training Title &nbsp;
                                                   <span className="text-danger">
                                                     *
                                                   </span>
                                                 </div>
                                               </div>
                                               <Field
-                                                name={`Trainings.${index}.LevelOfTraining`}
+                                                name={`Trainings.${index}.Title`}
                                                 className="form-control"
                                               />
                                             </div>
                                           </div>
                                         </div>
-                                        <div className="form-group row">
-                                          <div className="col-sm-11 offset-sm-1">
-                                            <div className="input-group">
-                                              <div className="input-group-prepend">
-                                                <div
-                                                  className={
-                                                    props?.errors?.Trainings?.[
-                                                      index
-                                                    ]?.ExamDegreeTitle
-                                                      ? "input-group-text bg-danger text-white"
-                                                      : "input-group-text"
-                                                  }
-                                                >
-                                                  Exam Degree Title &nbsp;
-                                                  <span className="text-danger">
-                                                    *
-                                                  </span>
-                                                </div>
-                                              </div>
-                                              <Field
-                                                name={`Trainings.${index}.ExamDegreeTitle`}
-                                                className="form-control"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div className="form-group row">
-                                          <div className="col-sm-11 offset-sm-1">
-                                            <div className="input-group">
-                                              <div className="input-group-prepend">
-                                                <div
-                                                  className={
-                                                    props?.errors?.Trainings?.[
-                                                      index
-                                                    ]?.ConcentrationMajorGroup
-                                                      ? "input-group-text bg-danger text-white"
-                                                      : "input-group-text"
-                                                  }
-                                                >
-                                                  Major Group &nbsp;
-                                                  <span className="text-danger">
-                                                    *
-                                                  </span>
-                                                </div>
-                                              </div>
-                                              <Field
-                                                name={`Trainings.${index}.ConcentrationMajorGroup`}
-                                                className="form-control"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
+
                                         <div className="form-group row">
                                           <div className="offset-sm-1 col-sm-11">
                                             <div className="input-group">
@@ -211,7 +156,34 @@ const TrainingSummary = () => {
                                                   className={
                                                     props?.errors?.Trainings?.[
                                                       index
-                                                    ]?.InstituteName
+                                                    ]?.Year
+                                                      ? "input-group-text bg-danger text-white"
+                                                      : "input-group-text"
+                                                  }
+                                                >
+                                                  Training Year &nbsp;
+                                                  <span className="text-danger">
+                                                    *
+                                                  </span>
+                                                </div>
+                                              </div>
+                                              <Field
+                                                name={`Trainings.${index}.Year`}
+                                                className="form-control"
+                                                type="date"
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="form-group row">
+                                          <div className="col-sm-11 offset-sm-1">
+                                            <div className="input-group">
+                                              <div className="input-group-prepend">
+                                                <div
+                                                  className={
+                                                    props?.errors?.Trainings?.[
+                                                      index
+                                                    ]?.Institute
                                                       ? "input-group-text bg-danger text-white"
                                                       : "input-group-text"
                                                   }
@@ -223,7 +195,7 @@ const TrainingSummary = () => {
                                                 </div>
                                               </div>
                                               <Field
-                                                name={`Trainings.${index}.InstituteName`}
+                                                name={`Trainings.${index}.Institute`}
                                                 className="form-control"
                                               />
                                             </div>
@@ -237,74 +209,39 @@ const TrainingSummary = () => {
                                                   className={
                                                     props?.errors?.Trainings?.[
                                                       index
-                                                    ]?.Board
+                                                    ]?.Country
                                                       ? "input-group-text bg-danger text-white"
                                                       : "input-group-text"
                                                   }
                                                 >
-                                                  Board &nbsp;
+                                                  Country &nbsp;
                                                   <span className="text-danger">
                                                     *
                                                   </span>
                                                 </div>
                                               </div>
-                                              <Field
-                                                name={`Trainings.${index}.Board`}
+                                              <Select
                                                 className="form-control"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div className="form-group row">
-                                          <div className="col-sm-11 offset-sm-1">
-                                            <div className="input-group">
-                                              <div className="input-group-prepend">
-                                                <div
-                                                  className={
-                                                    props?.errors?.Trainings?.[
-                                                      index
-                                                    ]?.YearOfPassing
-                                                      ? "input-group-text bg-danger text-white"
-                                                      : "input-group-text"
-                                                  }
-                                                >
-                                                  Year Passing &nbsp;
-                                                  <span className="text-danger">
-                                                    *
-                                                  </span>
-                                                </div>
-                                              </div>
-                                              <Field
-                                                type="date"
-                                                name={`Trainings.${index}.YearOfPassing`}
-                                                className="form-control"
-                                              />
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div className="form-group row">
-                                          <div className="col-sm-11 offset-sm-1">
-                                            <div className="input-group">
-                                              <div className="input-group-prepend">
-                                                <div
-                                                  className={
-                                                    props?.errors?.Trainings?.[
-                                                      index
-                                                    ]?.Result
-                                                      ? "input-group-text bg-danger text-white"
-                                                      : "input-group-text"
-                                                  }
-                                                >
-                                                  Result &nbsp;
-                                                  <span className="text-danger">
-                                                    *
-                                                  </span>
-                                                </div>
-                                              </div>
-                                              <Field
-                                                name={`Trainings.${index}.Result`}
-                                                className="form-control"
-                                                min="1"
+                                                isSearchable
+                                                closeMenuOnSelect={true}
+                                                defaultValue={[
+                                                  CountryList[
+                                                    CountryList.findIndex(
+                                                      (item) =>
+                                                        item.value ===
+                                                        props?.initialValues
+                                                          ?.Trainings?.[index]
+                                                          ?.Country,
+                                                    )
+                                                  ],
+                                                ]}
+                                                options={CountryList}
+                                                onChange={(e) =>
+                                                  props.setFieldValue(
+                                                    `Trainings.${index}.Country`,
+                                                    e.value,
+                                                  )
+                                                }
                                               />
                                             </div>
                                           </div>
@@ -336,16 +273,43 @@ const TrainingSummary = () => {
                                           </div>
                                         </div>
                                         <div className="form-group row">
+                                          <div className="col-sm-11 offset-sm-1">
+                                            <div className="input-group">
+                                              <div className="input-group-prepend">
+                                                <div
+                                                  className={
+                                                    props?.errors?.Trainings?.[
+                                                      index
+                                                    ]?.Location
+                                                      ? "input-group-text bg-danger text-white"
+                                                      : "input-group-text"
+                                                  }
+                                                >
+                                                  Location &nbsp;
+                                                  <span className="text-danger">
+                                                    *
+                                                  </span>
+                                                </div>
+                                              </div>
+                                              <Field
+                                                name={`Trainings.${index}.Location`}
+                                                className="form-control"
+                                                min="1"
+                                              />
+                                            </div>
+                                          </div>
+                                        </div>
+                                        <div className="form-group row">
                                           <div className="offset-sm-1 col-sm-11">
                                             <div className="input-group">
                                               <div className="input-group-prepend">
                                                 <div className="input-group-text">
-                                                  Achievement
+                                                  Covered
                                                 </div>
                                               </div>
                                               <Field
                                                 as="textarea"
-                                                name={`Trainings.${index}.Achievement`}
+                                                name={`Trainings.${index}.Covered`}
                                                 className="form-control"
                                               />
                                             </div>
@@ -418,14 +382,14 @@ const TrainingSummary = () => {
         Training Summary
       </h4>
 
-      {UserDetails?.Trainings?.map((edu, index) => (
-        <div className="Training-label" key={index}>
-          <span className="study-year">{edu.Duration}</span>
+      {UserDetails?.Trainings?.map((trainging, index) => (
+        <div className="education-label" key={index}>
+          <span className="study-year">{trainging.Duration}</span>
           <h5>
-            {edu.LevelOfTraining}
-            <span>@ {edu.InstituteName}</span>
+            {trainging.Title}
+            <span>@ {trainging.Institute}</span>
           </h5>
-          <p>{edu.Achievement}</p>
+          <p>{trainging.Covered}</p>
         </div>
       ))}
 

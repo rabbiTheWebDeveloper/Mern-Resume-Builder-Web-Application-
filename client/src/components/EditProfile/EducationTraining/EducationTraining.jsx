@@ -4,6 +4,7 @@ import { Tab, Tabs } from "react-bootstrap";
 
 //Internal Lib Import
 import AcademicSummary from "./AcademicSummary";
+import ProfessionalSummary from "./ProfessionalSummary";
 import TrainingSummary from "./TrainingSummary";
 
 const EducationTraining = () => {
@@ -19,7 +20,7 @@ const EducationTraining = () => {
         eventKey="ProfessionalCertification"
         title="Professional Certification"
       >
-        <AcademicSummary />
+        <ProfessionalSummary />
       </Tab>
     </Tabs>
   );

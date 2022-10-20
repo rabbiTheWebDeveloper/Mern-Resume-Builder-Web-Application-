@@ -77,11 +77,14 @@ const AddressDetails = () => {
           <Row>
             <Col>
               <div className="form-group">
-                <label className={
+                <label
+                  className={
                     props.errors.LastName
                       ? "col-form-label bg-danger text-white"
                       : "col-form-label"
-                  } htmlFor="LastName">
+                  }
+                  htmlFor="LastName"
+                >
                   Present Address <span className="text-danger">*</span>
                 </label>
 
@@ -130,10 +133,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PresentAddressDistrict"
                         >
                           Select District <span className="text-danger">*</span>
@@ -165,10 +168,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PresentAddressUpazila"
                         >
                           Select Upazila <span className="text-danger">*</span>
@@ -199,10 +202,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PermanentAddressUnion"
                         >
                           Select Union <span className="text-danger">*</span>
@@ -234,10 +237,10 @@ const AddressDetails = () => {
                     <div className="form-group">
                       <label
                         className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                          props.errors.LastName
+                            ? "col-form-label bg-danger text-white"
+                            : "col-form-label"
+                        }
                         htmlFor="PresentAddressCountry"
                       >
                         Select Country <span className="text-danger">*</span>
@@ -272,10 +275,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PresentAddressRoad"
                         >
                           Select Road <span className="text-danger">*</span>
@@ -302,11 +305,14 @@ const AddressDetails = () => {
           <Row>
             <Col>
               <div className="form-group">
-                <label className={
+                <label
+                  className={
                     props.errors.LastName
                       ? "col-form-label bg-danger text-white"
                       : "col-form-label"
-                  } htmlFor="LastName">
+                  }
+                  htmlFor="LastName"
+                >
                   Permanent Address <span className="text-danger">*</span>
                 </label>
 
@@ -355,10 +361,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PermanentAddressDistrict"
                         >
                           Select District <span className="text-danger">*</span>
@@ -390,10 +396,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PermanentAddressUpazila"
                         >
                           Select Upazila <span className="text-danger">*</span>
@@ -425,10 +431,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PermanentAddressUnion"
                         >
                           Select Union <span className="text-danger">*</span>
@@ -463,10 +469,10 @@ const AddressDetails = () => {
                     <div className="form-group">
                       <label
                         className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                          props.errors.LastName
+                            ? "col-form-label bg-danger text-white"
+                            : "col-form-label"
+                        }
                         htmlFor="PermanentAddressCountry"
                       >
                         Select Country <span className="text-danger">*</span>
@@ -504,10 +510,10 @@ const AddressDetails = () => {
                       <div className="form-group">
                         <label
                           className={
-                    props.errors.LastName
-                      ? "col-form-label bg-danger text-white"
-                      : "col-form-label"
-                  }
+                            props.errors.LastName
+                              ? "col-form-label bg-danger text-white"
+                              : "col-form-label"
+                          }
                           htmlFor="PermanentAddressRoad"
                         >
                           Select Road <span className="text-danger">*</span>
